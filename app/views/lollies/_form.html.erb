@@ -1,0 +1,32 @@
+<%= form_with(model: lolly, local: true) do |form| %>
+  <% if lolly.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lolly.errors.count, "error") %> prohibited this lolly from being saved:</h2>
+
+      <ul>
+      <% lolly.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :lolly_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :lolly_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :lolly_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
