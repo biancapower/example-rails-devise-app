@@ -1,5 +1,6 @@
 class LolliesController < ApplicationController
   before_action :set_lolly, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # GET /lollies
   # GET /lollies.json
